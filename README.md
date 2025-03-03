@@ -9,17 +9,17 @@ This document is a memo from when I experimented with the Liberty mpTelemetry-2.
 3. Create a project for OpenTelemetry Collector
 
 4. With an IBMID, you can use Instana trial for 14 days. After registration, you will receive the following main including "Agent Key". This is needed to integrate OpenTelemetry collector with your Instana service.   
-<img width="400" alt="image" src="https://media.github.ibm.com/user/24674/files/bcaf8f49-258e-470f-a610-4e5c1a228eea">
+![image](https://github.com/user-attachments/assets/23c5468e-8995-43f5-b536-b196ac38ad1c)
 
 5. In the Instana console, check your reagion.  
-<img width="400" alt="image" src="https://media.github.ibm.com/user/24674/files/e0829006-45d1-48c1-963b-5ac190037754">
-<img width="400" alt="image" src="https://media.github.ibm.com/user/24674/files/fa04ffab-9d7b-4b6b-9076-d8d18431871d">
+![image](https://github.com/user-attachments/assets/e434646a-3132-4c0b-9a5b-fd38ae8a2268)   
+![image](https://github.com/user-attachments/assets/51971585-1827-4438-a4dd-ed97514156f5)   
 
 6. check the endpoint of the reagion.
 https://www.ibm.com/docs/en/instana-observability/current?topic=instana-backend
-<img width="400" alt="image" src="https://media.github.ibm.com/user/24674/files/d94957c3-c7ff-4a0a-a4b8-0e0758ed4250">
+![image](https://github.com/user-attachments/assets/5f0d0b26-84f7-483c-9184-23b5057c59fd)
 
-7. create a OpenTelemetry Collector with the following YAML in the project created at the step 3.   
+8. create a OpenTelemetry Collector with the following YAML in the project created at the step 3.   
 
 ```
 kind: OpenTelemetryCollector
@@ -59,7 +59,7 @@ spec:
           receivers: [otlp]
 
 ```
-<img width="999" alt="image" src="https://media.github.ibm.com/user/24674/files/4ac2ff3c-8128-4c2c-804d-97c06ddd4cda">.  
+![image](https://github.com/user-attachments/assets/47b3e1e9-282f-41a2-af60-88c020775034)
 
 Note: Initially, I tried to let a liberty running on on-prem send the data to the collector via route. However, it failed with the following error.   
 ```
@@ -244,13 +244,13 @@ oc expose service/myrest
 
 10. let's check the instana console after accessing the REST services.
 You will see liberty detects the JAX-RS endpoints automatically and sends their static data.   
-<img width="600" alt="image" src="https://media.github.ibm.com/user/24674/files/a222a750-1083-4f5b-8b89-57afefba042e">.  
-<img width="600" alt="image" src="https://media.github.ibm.com/user/24674/files/a2d9e811-3bc5-4d6c-b165-c64705857a4b">.  
-<img width="600" alt="image" src="https://media.github.ibm.com/user/24674/files/4d66ec26-94d9-49c5-b578-e626b0dc2427">.  
-<img width="600" alt="image" src="https://media.github.ibm.com/user/24674/files/cd08fbee-e381-465c-9f0d-c7598b77a216">.  
-<img width="600" alt="image" src="https://media.github.ibm.com/user/24674/files/0c774b99-79fb-4815-8971-6e92376f99ef">.  
+![image](https://github.com/user-attachments/assets/3564456a-32e9-4f00-8b58-c21c5377fbd8)
+![image](https://github.com/user-attachments/assets/0f6ccf4e-cbae-4f27-9355-936a8ad235f2)   
+![image](https://github.com/user-attachments/assets/80bc3c58-0cb8-4d42-a58c-97b28f781ba6).  
+![image](https://github.com/user-attachments/assets/20854b0c-2bb9-4c3c-a61d-2268c7777b84)   
+![image](https://github.com/user-attachments/assets/4a0beb90-cab5-4e33-a52e-9ea97049689e)   
 With the analytics feature of Instana, you will see the span named QueryDatabase is the bottleneck.     
-<img width="600" alt="image" src="https://media.github.ibm.com/user/24674/files/4e459aae-01e0-4710-a43c-f80d4aee1297">.  
+![image](https://github.com/user-attachments/assets/ee8d8227-5d81-4744-b58f-593b373985ed)
 
 
 Hopefully, this document gives you a brief overview of the mpTelemetry feature.   
